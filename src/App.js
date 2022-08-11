@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       {/* <DemoClass></DemoClass> */}
 
-      {/* <DemoFunction /> */}
+      <DemoFunction />
       <Ex_Layout />
     </div>
   );
