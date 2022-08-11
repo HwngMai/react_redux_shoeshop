@@ -8,7 +8,10 @@ export default class Ex_Layout extends Component {
   render() {
     return (
       <div className="">
-        <p className={styles["title-color"]}>Hello header</p>
+        <p className={`${styles["title-color"]} ${styles.bgPrimary}`}>
+          Hello header
+        </p>
+        <p className={styles.bgPrimary}>Demo background</p>
         <HeaderComponent />
         <div className="row">
           <div className="col-4">
