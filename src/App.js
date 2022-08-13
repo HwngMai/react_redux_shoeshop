@@ -7,6 +7,8 @@ import Data_Binding from "./Data_Binding/Data_Binding";
 import Event_Binding from "./Event_Binding/Event_Binding";
 import Conditional_Rendering from "./Conditional_Rendering/Conditional_Rendering";
 import Demo_State from "./Demo_State/Demo_State";
+import RederWithMap from "./RederWithMap/RederWithMap";
+import Demo_Prop from "./Demo_Prop/Demo_Prop";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
       {/* <Data_Binding /> */}
       {/* <Event_Binding /> */}
       {/* <Conditional_Rendering /> */}
-      <Demo_State />
+      {/* <Demo_State /> */}
+      <RederWithMap />
+      {/* <Demo_Prop /> */}
     </div>
   );
 }
