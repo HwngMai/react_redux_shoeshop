@@ -62,7 +62,7 @@ export default class RederWithMap extends Component {
         <p>RederWithMap</p>
         <div className="row">
           {this.state.phoneArr.map((item, index) => {
-            return <CardItem data={item} />;
+            return <CardItem data={item} key={index.toString() + item.id} />;
           })}
         </div>
       </div>

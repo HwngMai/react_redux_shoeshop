@@ -9,6 +9,7 @@ import Conditional_Rendering from "./Conditional_Rendering/Conditional_Rendering
 import Demo_State from "./Demo_State/Demo_State";
 import RederWithMap from "./RederWithMap/RederWithMap";
 import Demo_Prop from "./Demo_Prop/Demo_Prop";
+import Ex_ShoeShop from "./Ex_ShoeShop/Ex_ShoeShop";
 
 function App() {
   return (
@@ -22,8 +23,9 @@ function App() {
       {/* <Event_Binding /> */}
       {/* <Conditional_Rendering /> */}
       {/* <Demo_State /> */}
-      <RederWithMap />
+      {/* <RederWithMap /> */}
       {/* <Demo_Prop /> */}
+      <Ex_ShoeShop />
     </div>
   );
 }
