@@ -9,7 +9,10 @@ export default class ListShoe extends Component {
           {this.props.data.map((item, index) => {
             return (
               <div className="col-3">
-                <ItemShoe detail={item} />
+                <ItemShoe
+                  handleViewDetail={this.props.handleXemChiTiet}
+                  detail={item}
+                />
               </div>
             );
           })}

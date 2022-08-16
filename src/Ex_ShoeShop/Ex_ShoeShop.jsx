@@ -9,6 +9,11 @@ export default class Ex_ShoeShop extends Component {
     shoeArr: dataShoe,
     detailShoe: dataShoe[0],
   };
+  handleXemChiTiet = (shoe) => {
+    this.setState({
+      detailShoe: shoe,
+    });
+  };
   render() {
     return (
       <div>
