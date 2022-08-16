@@ -14,7 +14,14 @@ export default class ItemShoe extends Component {
               bulk of the card's content.
             </p>
 
-            <button className="btn btn-secondary">Add to cart</button>
+            <button
+              onClick={() => {
+                this.props.handleAddToCart(this.props.detail);
+              }}
+              className="btn btn-secondary"
+            >
+              Add to cart
+            </button>
 
             <button
               onClick={() => {
