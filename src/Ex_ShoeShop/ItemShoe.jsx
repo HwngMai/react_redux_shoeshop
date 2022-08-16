@@ -14,6 +14,8 @@ export default class ItemShoe extends Component {
               bulk of the card's content.
             </p>
             <button className="btn btn-secondary">Add to cart</button>
+
+            <button className="btn btn-warning">Xem chi tiết</button>
           </div>
         </div>
       </Fragment>

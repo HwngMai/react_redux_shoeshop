@@ -17,7 +17,7 @@ function App() {
       {/* <DemoClass></DemoClass> */}
 
       {/* <DemoFunction /> */}
-      {/* <Ex_Layout /> */}
+      {/* <Edx_Layout /> */}
 
       {/* <Data_Binding /> */}
       {/* <Event_Binding /> */}
