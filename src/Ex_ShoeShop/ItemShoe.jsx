@@ -13,9 +13,17 @@ export default class ItemShoe extends Component {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
+
             <button className="btn btn-secondary">Add to cart</button>
 
-            <button className="btn btn-warning">Xem chi tiết</button>
+            <button
+              onClick={() => {
+                this.props.handleViewDetail(this.props.detail.id);
+              }}
+              className="btn btn-warning"
+            >
+              Xem chi tiết
+            </button>
           </div>
         </div>
       </Fragment>

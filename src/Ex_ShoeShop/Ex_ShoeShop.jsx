@@ -9,16 +9,25 @@ export default class Ex_ShoeShop extends Component {
     shoeArr: dataShoe,
     detailShoe: dataShoe[0],
   };
-  handleXemChiTiet = (shoe) => {
-    this.setState({
-      detailShoe: shoe,
+  handleXemChiTiet = (idShoe) => {
+    // c1
+    let index = this.state.shoeArr.findIndex((item) => {
+      return item.id == idShoe;
     });
+
+    index !== -1 &&
+      this.setState({
+        detailShoe: this.state.shoeArr[index],
+      });
   };
   render() {
     return (
       <div>
         <GioHang />
-        <ListShoe data={this.state.shoeArr} />
+        <ListShoe
+          data={this.state.shoeArr}
+          handleXemChiTiet={this.handleXemChiTiet}
+        />
         <DetailShoe detailShoe={this.state.detailShoe} />
       </div>
     );
