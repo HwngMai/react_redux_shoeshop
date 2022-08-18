@@ -10,6 +10,7 @@ import Demo_State from "./Demo_State/Demo_State";
 import RederWithMap from "./RederWithMap/RederWithMap";
 import Demo_Prop from "./Demo_Prop/Demo_Prop";
 import Ex_ShoeShop from "./Ex_ShoeShop/Ex_ShoeShop";
+import DemoReduxMini from "./DemoReduxMini/DemoReduxMini";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
       {/* <Demo_State /> */}
       {/* <RederWithMap /> */}
       {/* <Demo_Prop /> */}
-      <Ex_ShoeShop />
+      {/* <Ex_ShoeShop /> */}
+      <DemoReduxMini />
     </div>
   );
 }
