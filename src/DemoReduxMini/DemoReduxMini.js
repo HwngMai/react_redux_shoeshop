@@ -27,12 +27,15 @@ class DemoReduxMini extends Component {
   }
 }
 let mapStateToProps = (state) => {
+  // mapStateToProps lấy dữ liệu về dưới dạng props
   return {
     number: state.number.soLuong,
     isLogin: state.number.isLogin,
   };
 };
 let mapDispatchToProps = (dispatch) => {
+  // mapDispatchToProps đẩy dữ liệu lên store
+
   return {
     tangSoLuong: () => {
       dispatch(tangSoLuongAction());
