@@ -42,17 +42,27 @@ export default class Ex_ShoeShop extends Component {
       // cloneGioHang[index] = sp;
       cloneGioHang[index].soLuong++;
     }
-
     this.setState({
       gioHang: cloneGioHang,
     });
   };
+
+  handleRemove = (idShoe) => {
+    console.log("idShoe: ", idShoe);
+
+    let index = this.state.gioHang.findIndex((item) => {
+      return item.id == idShoe;
+    });
+  };
   render() {
-    console.log(this.state.gioHang.length);
+    // console.log(this.state.gioHang.length);
 
     return (
       <div>
-        <GioHang gioHang={this.state.gioHang} />
+        <GioHang
+          handleRemove={this.handleRemove}
+          gioHang={this.state.gioHang}
+        />
         <ListShoe
           data={this.state.shoeArr}
           handleXemChiTiet={this.handleXemChiTiet}

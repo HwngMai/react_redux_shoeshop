@@ -22,7 +22,14 @@ export default class GioHang extends Component {
             <button className="btn btn-success">+</button>
           </td>
           <td>
-            <button className="btn btn-danger">Xoá</button>
+            <button
+              onClick={() => {
+                this.props.handleRemove(item.id);
+              }}
+              className="btn btn-danger"
+            >
+              Xoá
+            </button>
           </td>
         </tr>
       );
