@@ -1,7 +1,7 @@
 import { getValue } from "@testing-library/user-event/dist/utils";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { XEM_CHI_TIET } from "./constants/shoeConstants";
+import { XEM_CHI_TIET } from "../Ex_ShoeShopRedux/constants/shoeConstants";
 
 class ItemShoe extends Component {
   render() {
@@ -40,7 +40,7 @@ class ItemShoe extends Component {
 }
 let mapDispatchToProps = (dispatch) => {
   return {
-    //Gọi func xem chi tiết từng loại giày 
+    //Gọi func xem chi tiết từng loại giày
     handleViewDetail: (value) => {
       dispatch({
         type: XEM_CHI_TIET,

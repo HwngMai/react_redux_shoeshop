@@ -30,8 +30,8 @@ function App() {
       {/* <Demo_Prop /> */}
       {/* <Ex_ShoeShop /> */}
       {/* <DemoReduxMini /> */}
-      {/* <Ex_ShoeShopRedux /> */}
-      <Ex_Tai_Xiu />
+      <Ex_ShoeShopRedux />
+      {/* <Ex_Tai_Xiu /> */}
     </div>
   );
 }

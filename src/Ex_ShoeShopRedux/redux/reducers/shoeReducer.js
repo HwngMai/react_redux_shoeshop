@@ -1,6 +1,6 @@
 import { XEM_CHI_TIET } from "../../constants/shoeConstants";
 import { dataShoe } from "../../data_shoe";
-// tạo store 
+// tạo store
 let initialState = {
   shoeArr: dataShoe,
   detailShoe: dataShoe[0],

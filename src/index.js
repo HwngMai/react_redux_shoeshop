@@ -10,7 +10,7 @@ import { rootReducer_ShoeShop } from "./Ex_ShoeShopRedux/redux/reducers/rootRedu
 import { rootReducer_XucXac } from "./Ex_Tai_Xiu/redux/Reducer/rootReducer";
 
 let store = createStore(
-  rootReducer_XucXac,
+  rootReducer_ShoeShop,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
