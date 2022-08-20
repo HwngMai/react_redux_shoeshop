@@ -10,7 +10,6 @@ export default class ListShoe extends Component {
             return (
               <div className="col-3">
                 <ItemShoe
-                  handleViewDetail={this.props.handleXemChiTiet}
                   detail={item}
                   handleAddToCart={this.props.handleAddToCart}
                 />
@@ -22,9 +21,3 @@ export default class ListShoe extends Component {
     );
   }
 }
-
-var a = 2;
-
-var b = a;
-
-var c = b;

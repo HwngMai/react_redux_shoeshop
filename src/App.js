@@ -12,10 +12,11 @@ import Demo_Prop from "./Demo_Prop/Demo_Prop";
 import Ex_ShoeShop from "./Ex_ShoeShop/Ex_ShoeShop";
 import DemoReduxMini from "./DemoReduxMini/DemoReduxMini";
 import Ex_ShoeShopRedux from "./Ex_ShoeShopRedux/Ex_ShoeShopRedux";
+import Ex_Tai_Xiu from "./Ex_Tai_Xiu/Ex_Tai_Xiu";
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       {/* <DemoClass></DemoClass> */}
 
       {/* <DemoFunction /> */}
@@ -29,7 +30,8 @@ function App() {
       {/* <Demo_Prop /> */}
       {/* <Ex_ShoeShop /> */}
       {/* <DemoReduxMini /> */}
-      <Ex_ShoeShopRedux />
+      {/* <Ex_ShoeShopRedux /> */}
+      <Ex_Tai_Xiu />
     </div>
   );
 }
