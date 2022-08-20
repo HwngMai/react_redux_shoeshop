@@ -6,9 +6,10 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { rootReducer_DemoReduxMini } from "./DemoReduxMini/redux/reducers/rootReducer";
+import { rootReducer_ShoeShop } from "./Ex_ShoeShopRedux/redux/reducers/rootReducer";
 
 let store = createStore(
-  rootReducer_DemoReduxMini,
+  rootReducer_ShoeShop,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

@@ -11,6 +11,7 @@ import RederWithMap from "./RederWithMap/RederWithMap";
 import Demo_Prop from "./Demo_Prop/Demo_Prop";
 import Ex_ShoeShop from "./Ex_ShoeShop/Ex_ShoeShop";
 import DemoReduxMini from "./DemoReduxMini/DemoReduxMini";
+import Ex_ShoeShopRedux from "./Ex_ShoeShopRedux/Ex_ShoeShopRedux";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       {/* <RederWithMap /> */}
       {/* <Demo_Prop /> */}
       {/* <Ex_ShoeShop /> */}
-      <DemoReduxMini />
+      {/* <DemoReduxMini /> */}
+      <Ex_ShoeShopRedux />
     </div>
   );
 }
