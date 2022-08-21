@@ -1,12 +1,7 @@
 import React, { Component } from "react";
-
-export default class GioHang extends Component {
+import { connect } from "react-redux";
+class GioHang extends Component {
   renderTbody = () => {
-    // if (this.props.gioHang.length == 0) {
-    //   return (
-    //     <p className="mt-5 text-center">Chưa có sản phẩm trong giỏi hàng</p>
-    //   );
-    // }
     return this.props.gioHang.map((item) => {
       return (
         <tr>
@@ -14,20 +9,19 @@ export default class GioHang extends Component {
           <td>{item.price}</td>
           <td>
             {" "}
-            <img src={item.image} style={{ width: 80 }} alt="" />
+            <img src={item.image} style={{ width: 80 }} alt='' />
           </td>
           <td>
-            <button className="btn btn-primary">-</button>
-            <span className="mx-3">{item.soLuong}</span>
-            <button className="btn btn-success">+</button>
+            <button className='btn btn-primary'>-</button>
+            <span className='mx-3'>{item.soLuong}</span>
+            <button className='btn btn-success'>+</button>
           </td>
           <td>
             <button
               onClick={() => {
                 this.props.handleRemove(item.id);
               }}
-              className="btn btn-danger"
-            >
+              className='btn btn-danger'>
               Xoá
             </button>
           </td>
@@ -38,9 +32,9 @@ export default class GioHang extends Component {
 
   render() {
     return (
-      <div className="container py-5">
+      <div className='container py-5'>
         {/* gioHang */}
-        <table className="table text-left">
+        <table className='table text-left'>
           <thead>
             <tr>
               <th>Tên</th>
@@ -49,14 +43,20 @@ export default class GioHang extends Component {
               <th>Số lượng</th>
             </tr>
           </thead>
-
           <tbody>{this.renderTbody()}</tbody>
         </table>
 
         {this.props.gioHang.length == 0 && (
-          <p className=" mt-5 text-center">Chưa có sản phẩm trong giỏi hàng</p>
+          <p className=' mt-5 text-center'>Chưa có sản phẩm trong giỏi hàng</p>
         )}
       </div>
     );
   }
 }
+// mapStateToProps lấy dữ liệu từ store về
+let mapStateToProps = (state) => {
+  return {
+    gioHang: state.gioHangReducer.gioHang,
+  };
+};
+export default connect(mapStateToProps)(GioHang);

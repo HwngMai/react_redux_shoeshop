@@ -1,7 +1,10 @@
 import { getValue } from "@testing-library/user-event/dist/utils";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { XEM_CHI_TIET } from "../Ex_ShoeShopRedux/constants/shoeConstants";
+import {
+  ADD_TO_CART,
+  XEM_CHI_TIET,
+} from "../Ex_ShoeShopRedux/constants/shoeConstants";
 
 class ItemShoe extends Component {
   render() {
@@ -19,7 +22,10 @@ class ItemShoe extends Component {
 
             <button
               onClick={() => {
-                this.props.handleAddToCart(this.props.detail);
+                this.props.handleAddToCart(
+                  this.props.detail,
+                  this.props.detail.id
+                );
               }}
               className='btn btn-secondary'>
               Add to cart
@@ -38,6 +44,7 @@ class ItemShoe extends Component {
     );
   }
 }
+
 let mapDispatchToProps = (dispatch) => {
   return {
     //Gọi func xem chi tiết từng loại giày
@@ -45,6 +52,12 @@ let mapDispatchToProps = (dispatch) => {
       dispatch({
         type: XEM_CHI_TIET,
         payload: value,
+      });
+    },
+    handleAddToCart: (value, id) => {
+      dispatch({
+        type: ADD_TO_CART,
+        payload: { value: value, id: id },
       });
     },
   };

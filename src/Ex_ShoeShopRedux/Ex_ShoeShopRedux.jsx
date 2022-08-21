@@ -10,18 +10,6 @@ export default class Ex_ShoeShopRedux extends Component {
     detailShoe: dataShoe[0],
     gioHang: [],
   };
-  // handleXemChiTiet = (idShoe) => {
-  //   // c1
-  //   let index = this.state.shoeArr.findIndex((item) => {
-  //     return item.id == idShoe;
-  //   });
-
-  //   index !== -1 &&
-  //     this.setState({
-  //       detailShoe: this.state.shoeArr[index],
-  //     });
-  // };
-
   handleAddToCart = (shoe) => {
     let cloneGioHang = [...this.state.gioHang];
 
