@@ -4,7 +4,7 @@ import { dataShoe } from "../../data_shoe";
 let initialState = {
   shoeArr: dataShoe,
   detailShoe: dataShoe[0],
-  gioHang: [],
+  // gioHang: [],
 };
 // rxreducer
 //tạo action

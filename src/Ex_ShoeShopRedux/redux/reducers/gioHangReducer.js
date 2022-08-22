@@ -10,7 +10,7 @@ const initialState = {
 // cú pháp khởi tạo lấy giỏ hàng từ component:
 export let gioHangReducer = (state = initialState, action) => {
   switch (action.type) {
-    // Thêm vào giỏ hàng
+    //FUNC Thêm vào giỏ hàng
     case ADD_TO_CART: {
       // Xử lí logic thêm giỏ hàng
       // tạo giỏ hàng cập nhật (gioHangCapNhat) = giỏ hàng hiện tại (state.gioHang)
@@ -34,7 +34,7 @@ export let gioHangReducer = (state = initialState, action) => {
       // Trả về state mới cho store gioHangReducer
       return { ...state };
     }
-    // Tăng giảm số lượng
+    //FUNC Tăng giảm số lượng
     case MINUS_PLUS_ITEM: {
       const { index, changeType } = action;
       console.log("action: ", action);
@@ -56,6 +56,7 @@ export let gioHangReducer = (state = initialState, action) => {
       state.gioHang = gioHangCapNhat;
       return { ...state };
     }
+    //FUNC xóa spGioHang
     case REMOVE_ITEM: {
       const { index } = action;
       let gioHangCapNhat = [...state.gioHang];

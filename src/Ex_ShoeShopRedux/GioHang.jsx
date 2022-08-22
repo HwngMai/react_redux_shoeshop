@@ -5,7 +5,6 @@ class GioHang extends Component {
   renderTbody = () => {
     // Nếu gioHang có key thì mới render
     if (this.props.gioHang.length !== 0) {
-      console.log("this.props.gioHang.length: ", this.props.gioHang.length);
       return this.props.gioHang.map((spGioHang, index) => {
         return (
           <tr key={index}>
@@ -35,7 +34,7 @@ class GioHang extends Component {
             <td>
               <button
                 onClick={() => {
-                  this.props.handleRemove(index);
+                  this.props.handleRemoveGioHang(index);
                 }}
                 className='btn btn-danger'>
                 Xoá
@@ -88,7 +87,7 @@ let mapDispatchToProps = (dispatch) => {
       });
     },
     // Gọi func xóa item
-    handleRemove: (index) => {
+    handleRemoveGioHang: (index) => {
       dispatch({
         type: REMOVE_ITEM,
         index,

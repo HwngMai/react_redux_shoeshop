@@ -1,11 +1,10 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { ADD_TO_CART, XEM_CHI_TIET } from "./constants/shoeConstants";
 
 class ItemShoe extends Component {
   render() {
-    let { name, image } = this.props.detail;
+    let { name, image } = this.props.item;
     return (
       <Fragment>
         <div className='card' style={{ width: "18rem" }}>
@@ -18,7 +17,7 @@ class ItemShoe extends Component {
             </p>
             <button
               onClick={() => {
-                this.props.handleAddToCart(this.props.detail);
+                this.props.handleAddToCart(this.props.item);
               }}
               className='btn btn-secondary'>
               Add to cart
@@ -26,7 +25,7 @@ class ItemShoe extends Component {
 
             <button
               onClick={() => {
-                this.props.handleViewDetail(this.props.detail);
+                this.props.handleViewDetail(this.props.item);
               }}
               className='btn btn-warning'>
               Xem chi tiết
