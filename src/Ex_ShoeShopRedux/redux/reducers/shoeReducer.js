@@ -1,4 +1,4 @@
-import { ADD_TO_CART, XEM_CHI_TIET } from "../../constants/shoeConstants";
+import { XEM_CHI_TIET } from "../../constants/shoeConstants";
 import { dataShoe } from "../../data_shoe";
 // tạo store
 let initialState = {
@@ -14,10 +14,6 @@ export let shoeReducer = (state = initialState, action) => {
       state.detailShoe = action.payload;
       return { ...state };
     }
-    // case ADD_TO_CART: {
-    //   state.detailShoe = action.payload;
-    //   return { ...state };
-    // }
     default:
       return state;
   }

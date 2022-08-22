@@ -1,10 +1,7 @@
 import { getValue } from "@testing-library/user-event/dist/utils";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import {
-  ADD_TO_CART,
-  XEM_CHI_TIET,
-} from "../Ex_ShoeShopRedux/constants/shoeConstants";
+import { ADD_TO_CART, XEM_CHI_TIET } from "./constants/shoeConstants";
 
 class ItemShoe extends Component {
   render() {
@@ -19,13 +16,9 @@ class ItemShoe extends Component {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-
             <button
               onClick={() => {
-                this.props.handleAddToCart(
-                  this.props.detail,
-                  this.props.detail.id
-                );
+                this.props.handleAddToCart(this.props.detail);
               }}
               className='btn btn-secondary'>
               Add to cart
@@ -48,17 +41,22 @@ class ItemShoe extends Component {
 let mapDispatchToProps = (dispatch) => {
   return {
     //Gọi func xem chi tiết từng loại giày
-    handleViewDetail: (value) => {
+
+    handleViewDetail: (itemDetail) => {
       dispatch({
         type: XEM_CHI_TIET,
-        payload: value,
+        payload: itemDetail,
       });
     },
-    handleAddToCart: (value, id) => {
-      dispatch({
+    handleAddToCart: (itemAddToCart) => {
+      // tạo props
+      const action = {
+        // Trả về gioHangReducer
         type: ADD_TO_CART,
-        payload: { value: value, id: id },
-      });
+        spGioHang: { ...itemAddToCart, soLuong: 1 },
+      };
+      dispatch(action);
+      console.log("action: ", action);
     },
   };
 };

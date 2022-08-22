@@ -1,25 +1,31 @@
+import { ADD_TO_CART } from "../../constants/shoeConstants";
+
 const initialState = {
-  gioHang: [
-    {
-      id: 1,
-      name: "Adidas Prophere",
-      alias: "adidas-prophere",
-      price: 350,
-      description:
-        "The adidas Primeknit upper wraps the foot with a supportive fit that enhances movement.\r\n\r\n",
-      shortDescription:
-        "The midsole contains 20% more Boost for an amplified Boost feeling.\r\n\r\n",
-      quantity: 995,
-      image: "http://svcy3.myclass.vn/images/adidas-prophere.png",
-    },
-  ],
+  gioHang: [],
 };
 
-export let gioHangReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    // case first:
-    //   return { ...state, ...payload };
-    default:
-      return state;
+export let gioHangReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_TO_CART: {
+      // Xử lí logic thêm giỏ hàng
+      let gioHangCapNhat = [...state.gioHang];
+      let index = gioHangCapNhat.findIndex(
+        (spGioHang) => spGioHang.id === action.spGioHang.id
+      );
+      // Nếu tìm thấy index tức đã có trên giỏ hàng
+      if (index !== -1) {
+        // Tăng số lượng lên 1
+        gioHangCapNhat[index].soLuong += 1;
+        // Không tìm thấy tức chưa có trên giỏ hàng
+      } else {
+        // đưa spGioHang mới vào gioHang
+        gioHangCapNhat.push(action.spGioHang);
+      }
+      // tạo giỏ hàng mới cho hàm renderGioHang
+      state.gioHang = gioHangCapNhat;
+      return { ...state };
+    }
   }
+
+  return state;
 };
