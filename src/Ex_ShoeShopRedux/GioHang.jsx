@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { MINUS_PLUS_ITEM } from "./constants/shoeConstants";
+import { MINUS_PLUS_ITEM, REMOVE_ITEM } from "./constants/shoeConstants";
 class GioHang extends Component {
   renderTbody = () => {
     // Nếu gioHang có key thì mới render
@@ -35,7 +35,7 @@ class GioHang extends Component {
             <td>
               <button
                 onClick={() => {
-                  this.props.handleRemove(spGioHang.id);
+                  this.props.handleRemove(index);
                 }}
                 className='btn btn-danger'>
                 Xoá
@@ -87,14 +87,14 @@ let mapDispatchToProps = (dispatch) => {
         changeType,
       });
     },
+    // Gọi func xóa item
+    handleRemove: (index) => {
+      dispatch({
+        type: REMOVE_ITEM,
+        index,
+      });
+    },
   };
 };
-// handleAddToCart: (itemAddToCart) => {
-//   // tạo props
-//   const action = {
-//     // Trả về gioHangReducer
-//     type: ADD_TO_CART,
-//     spGioHang: { ...itemAddToCart, soLuong: 1 },
-//   };
-//   dispatch(action);
+
 export default connect(mapStateToProps, mapDispatchToProps)(GioHang);

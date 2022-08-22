@@ -1,4 +1,8 @@
-import { ADD_TO_CART, MINUS_PLUS_ITEM } from "../../constants/shoeConstants";
+import {
+  ADD_TO_CART,
+  MINUS_PLUS_ITEM,
+  REMOVE_ITEM,
+} from "../../constants/shoeConstants";
 // Khởi tạo store chứa giỏ hàng
 const initialState = {
   gioHang: [],
@@ -6,7 +10,7 @@ const initialState = {
 // cú pháp khởi tạo lấy giỏ hàng từ component:
 export let gioHangReducer = (state = initialState, action) => {
   switch (action.type) {
-    //
+    // Thêm vào giỏ hàng
     case ADD_TO_CART: {
       // Xử lí logic thêm giỏ hàng
       // tạo giỏ hàng cập nhật (gioHangCapNhat) = giỏ hàng hiện tại (state.gioHang)
@@ -30,13 +34,17 @@ export let gioHangReducer = (state = initialState, action) => {
       // Trả về state mới cho store gioHangReducer
       return { ...state };
     }
+    // Tăng giảm số lượng
     case MINUS_PLUS_ITEM: {
       const { index, changeType } = action;
       console.log("action: ", action);
       let gioHangCapNhat = [...state.gioHang];
-      // xử lí 
+      // xử lí
+      // kiểm tra nếu changeType = true tức cộng thêm
       if (changeType) {
+        //cộng thêm 1
         gioHangCapNhat[index].soLuong += 1;
+        // changeType = false tức trừ đi
       } else {
         if (gioHangCapNhat[index].soLuong >= 2)
           gioHangCapNhat[index].soLuong -= 1;
@@ -45,6 +53,13 @@ export let gioHangReducer = (state = initialState, action) => {
         }
       }
       //Cập nhật lại state của gioHang
+      state.gioHang = gioHangCapNhat;
+      return { ...state };
+    }
+    case REMOVE_ITEM: {
+      const { index } = action;
+      let gioHangCapNhat = [...state.gioHang];
+      gioHangCapNhat.splice(index, 1);
       state.gioHang = gioHangCapNhat;
       return { ...state };
     }
