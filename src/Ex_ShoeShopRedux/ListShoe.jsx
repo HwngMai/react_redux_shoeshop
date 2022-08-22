@@ -10,10 +10,7 @@ export default class ListShoe extends Component {
           {this.props.data.map((item, index) => {
             return (
               <div className='col-3' key={index}>
-                <ItemShoe
-                  detail={item}
-                  handleAddToCart={this.props.handleAddToCart}
-                />
+                <ItemShoe detail={item} />
               </div>
             );
           })}
@@ -23,5 +20,3 @@ export default class ListShoe extends Component {
   }
 }
 //Xây dựng hàm
-
-

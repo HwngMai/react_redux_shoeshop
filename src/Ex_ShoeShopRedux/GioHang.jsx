@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { MINUS_PLUS_ITEM } from "./constants/shoeConstants";
 class GioHang extends Component {
   renderTbody = () => {
     // Nếu gioHang có key thì mới render
@@ -15,9 +16,21 @@ class GioHang extends Component {
               <img src={spGioHang.image} style={{ width: 80 }} alt='' />
             </td>
             <td>
-              <button className='btn btn-primary'>-</button>
+              <button
+                onClick={() => {
+                  this.props.handleMinusPlus(index, false);
+                }}
+                className='btn btn-primary'>
+                -
+              </button>
               <span className='mx-3'>{spGioHang.soLuong}</span>
-              <button className='btn btn-success'>+</button>
+              <button
+                onClick={() => {
+                  this.props.handleMinusPlus(index, true);
+                }}
+                className='btn btn-success'>
+                +
+              </button>
             </td>
             <td>
               <button
@@ -63,4 +76,25 @@ let mapStateToProps = (state) => {
     gioHang: state.gioHangReducer.gioHang,
   };
 };
-export default connect(mapStateToProps)(GioHang);
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    // Gọi func tăng giảm số lượng
+    handleMinusPlus: (index, changeType) => {
+      dispatch({
+        type: MINUS_PLUS_ITEM,
+        index,
+        changeType,
+      });
+    },
+  };
+};
+// handleAddToCart: (itemAddToCart) => {
+//   // tạo props
+//   const action = {
+//     // Trả về gioHangReducer
+//     type: ADD_TO_CART,
+//     spGioHang: { ...itemAddToCart, soLuong: 1 },
+//   };
+//   dispatch(action);
+export default connect(mapStateToProps, mapDispatchToProps)(GioHang);

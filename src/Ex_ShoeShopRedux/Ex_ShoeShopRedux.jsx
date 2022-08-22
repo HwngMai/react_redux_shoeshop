@@ -53,7 +53,6 @@ export default class Ex_ShoeShopRedux extends Component {
         />
         <ListShoe
           data={this.state.shoeArr}
-          handleAddToCart={this.handleAddToCart}
         />
         <DetailShoe detailShoe={this.state.detailShoe} />
       </div>
